@@ -1,0 +1,72 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  height: 20%;
+  transform: translate(-50%, -50%);
+  perspective: 180px;
+  transform-style: preserve-3d;
+}
+.container .paper {
+  width: 35px;
+  height: 45px;
+  background-color: #fff;
+  border: 5px solid blueviolet;
+  position: absolute;
+  border-left: none;
+  transform-origin: 0% 50%;
+}
+.container .paper:nth-child(2) {
+  transform: rotate(180deg);
+}
+
+.container .paper:nth-child(3) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 1.5s;
+}
+.container .paper:nth-child(4) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 2s;
+}
+.container .paper:nth-child(5) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 2.5s;
+}
+.container .paper:nth-child(6) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 3s;
+}
+.container .paper:nth-child(7) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 3.5s;
+}
+.container .paper:nth-child(8) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 4s;
+}
+.container .paper:nth-child(9) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 4.5s;
+}
+.container .paper:nth-child(10) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 5s;
+}
+.container .paper:nth-child(11) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 5.5s;
+}
+.container .paper:nth-child(12) {
+  animation: flip 2.5s infinite ease-in-out;
+  animation-delay: 6s;
+}
+
+@keyframes flip {
+  30% {
+    transform: rotateY(-180deg);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="parent">
+      <div class="curvedshape"></div>
+      <div class="section">
+        <div class="clip">
+          <p>All fields marked an asterisk (*) are required</p>
+        </div>
+        <div class="clip2">
+          <h2>Create an account</h2>
+          <form action="" method="get" id="form">
+            <div class="emaill input-control">
+              <label for="email">Enter your Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="example@gmail.com"
+              />
+              <div class="error"></div>
+            </div>
+            <div>
+              <h4 class="dob-heading">Date of birth (optional)</h4>
+              <div class="DOB">
+                <div class="input-control">
+                  <label for="date">Date</label>
+                  <input type="number" id="date" />
+                  <div class="error"></div>
+                </div>
+                <div>
+                  <label for="month">Month</label>
+                  <select name="month">
+                    <option value="month">Month</option>
+                    <option value="january">January</option>
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="october">October</option>
+                    <option value="november">November</option>
+                    <option value="december">December</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="year">Year</label>
+                  <select name="year">
+                    <option value="year">Year</option>
+                    <option value="1985">1985</option>
+                    <option value="1986">1986</option>
+                    <option value="1987">1987</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="passwordd input-control">
+              <label for="password">choose a strong Password</label>
+              <input type="password" name="password" id="password" />
+              <div class="error"></div>
+            </div>
+            <div class="type0fPerson">
+              <h4>Are you an agency or individual?</h4>
+              <div>
+                <div>
+                  <input
+                    type="radio"
+                    name="type"
+                    id="individual"
+                    value="individual"
+                  />
+                  <label for="individual">Individual</label>
+                </div>
+                <div>
+                  <input type="radio" name="type" id="agency" value="agency" />
+                  <label for="agency">Agency</label>
+                </div>
+              </div>
+            </div>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

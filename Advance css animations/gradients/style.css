@@ -1,0 +1,103 @@
+body {
+  /* Basic styling for the body element */
+  background-color: #ffffff;
+  color: #390d0d;
+  font-size: 16px;
+  font-family: "UI Monospace", monospace;
+}
+
+.container {
+  /* Centered container with a max-width for better layout */
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrap,
+.wrap1,
+.wrap2,
+.wrap3 {
+  /* Each wrap div has a width, height, and a centered margin for spacing */
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  margin: 10px;
+  /* perspective: -1000px; */
+  /* transform-style: preserve-3d;
+    perspective-origin: -50% 350%; */
+}
+
+.wrap {
+  background-color: #262626;
+  background-image: linear-gradient(to right, #333 1px, transparent 1px);
+  background-size: 4vh 3vh;
+}
+.wrap1 {
+  background-color: #262626;
+  /* direction color how much spread you want, then another color (must else wont work)*/
+  background-image: linear-gradient(to right, #333 1px, transparent 1px),
+    linear-gradient(to bottom, #333 1px, transparent 1px);
+  background-size: 4vh 3vh;
+}
+
+.wrap2 {
+  background-color: #262626;
+  background-image: linear-gradient(180deg, #333 1px, transparent 1px),
+    linear-gradient(90deg, #333 1px, transparent 1px);
+  background-size: 4vh 3vh;
+}
+.wrap3 {
+  background-color: #262626;
+  background-image: linear-gradient(to right, #f00cd1 1px, transparent 1px),
+    linear-gradient(to bottom, #2db11b 2px, transparent 2px),
+    linear-gradient(to left, #b61717 10px, blue 1px);
+  background-size: 4vh 3vh;
+}
+
+.wrap4 {
+  width: 650px;
+  height: 650px;
+  border: 1px solid black;
+  /* x-spred,y-spread,x-axis move,y-axismove ,color with scale and blurness,another color must*/
+  background-image: radial-gradient(
+      60px 70px at 50% 120px,
+      red 60%,
+      transparent 10%
+    ),
+    radial-gradient(
+      120px 100px at 30% 190px,
+      rgb(85, 201, 32) 10%,
+      transparent 0%
+    );
+}
+
+.wrap5 {
+  width: 650px;
+  height: 250px;
+  border: 1px solid black;
+  /* center,top,left,right,bottom */
+  background-image: radial-gradient(circle at left top, yellow 10%, blue 80%);
+}
+
+.wrap8 {
+  width: 650px;
+  height: 250px;
+  border: 1px solid black;
+
+  /* x-spred,y-spread,x-axis move,y-axismove ,color with scale and blurness,another color must*/
+  background-image: radial-gradient(
+      20% 50% at 50% 120px,
+      hsl(229, 64%, 46%) 60%,
+      transparent 10%
+    ),
+    radial-gradient(
+      30% 190px at 50% 50%,
+      hsl(229, 60%, 34%) 60%,
+      transparent 0%
+    ),
+    radial-gradient(
+      40% 250px at 50% 50%,
+      hsl(229, 42%, 38%) 60%,
+      transparent 0%
+    );
+}

@@ -1,0 +1,183 @@
+/* it makes element center */
+/* position: absolute;
+left: 0;
+right: 0; */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  /* transform-style: preserve-3d;
+  perspective: 100px; */
+  z-index: 0;
+}
+header:before {
+  animation: fade-slide-down 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  /* background-image: url(../images/rose.jpg); */
+  /* animation: no-transform 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards; */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+    url(../../../images/rose.jpg) no-repeat bottom;
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  content: "";
+  position: absolute;
+  /* transform: translateY(-4rem); */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+header:after {
+  animation: rotate-up 0.5s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  background: #f9fcff;
+  content: "";
+  height: 40rem;
+  left: -5%;
+  position: absolute;
+  right: -5%;
+  top: 90%;
+  z-index: 0;
+  transform-origin: 0 0;
+  transform: rotateZ(-4deg);
+}
+
+.animate-pop-in {
+  animation: pop-in 0.6s cubic-bezier(0, 0.5, 0, 1) forwards;
+  opacity: 0;
+}
+.header-title,
+.header-subtitle {
+  color: #fff;
+}
+.header-title {
+  animation-delay: 1.2s;
+}
+
+.header-subtitle {
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  animation-delay: 1.4s;
+}
+
+.header-button {
+  position: relative;
+  transform: translateZ(0.1px);
+  animation-delay: 1.5s;
+  z-index: 10;
+}
+
+.header-down-arrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: 4vh;
+  z-index: 10;
+}
+
+/* all properties applies first in browser then animaions */
+
+.header-down-arrow img {
+  animation: fade-slide-up 1s 1s ease-out forwards,
+    pulse 2s 3s ease-out infinite; /* after 1s element will be visible as we write in animation duration 1s */
+  opacity: 0; /*  element is not visible in dom as before animation which 1s before */
+}
+
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    /* y-axis */
+    /* 4
+    3
+    2
+    1
+    0
+    -1
+    -2 */
+
+    /* -4 means down ,after animation,before animation it is on top */
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    /* scale(0.8)-> means text should come from back as scalse is less than 0 */
+    /* scale(2)-> means text should come from front as scalse is greater than 0 */
+    transform: translateY(-4rem) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+@keyframes rotate-up {
+  100% {
+    transform: rotateZ(-4deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  50% {
+    opacity: 0.8;
+    /* x-axis->--------
+    y-axis->|
+            | 
+     no-axis->means both      
+     below 1 ->shrinks
+     above 1-> bubble up
+     1 equal */
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes no-transform {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

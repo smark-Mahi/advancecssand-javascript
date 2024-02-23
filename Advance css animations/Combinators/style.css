@@ -1,0 +1,35 @@
+.parent > p {
+  background-color: rgba(127, 255, 212, 0.267);
+}
+
+.parent p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.parent p {
+  color: rgb(117, 13, 214);
+}
+
+.parent > div {
+  text-decoration: underline;
+}
+
+.directul * {
+  font-style: italic;
+}
+
+.directul > ul {
+  color: chartreuse;
+}
+
+.list > li {
+  background-color: burlywood;
+}
+
+.directul + div {
+  font-size: 30px;
+}
+
+.directul ~ div {
+  border: 2px dashed blue;
+}

@@ -1,0 +1,109 @@
+body {
+  /* Basic styling for the body element */
+  background-color: #ffffff;
+  color: #390d0d;
+  font-size: 16px;
+  font-family: "UI Monospace", monospace;
+}
+
+.container {
+  /* Centered container with a max-width for better layout */
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.wrap {
+  /* Each wrap div has a width, height, and a centered margin for spacing */
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 100px;
+  /* perspective: -1000px; */
+  /* transform-style: preserve-3d;
+  perspective-origin: -50% 350%; */
+}
+
+.element {
+  /* Each element div is rotated 60 degrees around a pivot point */
+  width: 150px;
+  height: 150px;
+  position: relative;
+  color: white;
+  text-align: center;
+  line-height: 150px;
+
+  transform: rotate(0deg);
+  animation: rotateinfinite 2s linear 1s infinite;
+}
+.elemen {
+  /* Each element div is rotated 60 degrees around a pivot point */
+  width: 150px;
+  height: 150px;
+  position: relative;
+  color: white;
+  text-align: center;
+  line-height: 150px;
+  transform: scale(0.5);
+  animation: scaleinfinite 3s linear 1s infinite;
+}
+/* x axis,y axis x-axis can go both left and right if in minus then will go to right dir*/
+/* y-axis meas top and bottom */
+.element-1 {
+  /* The default transform-origin is in the center (50% 50%) */
+  background-color: red;
+}
+
+.element-2 {
+  /* The transform-origin is in the bottom right corner */
+  background-color: green;
+  transform-origin: bottom right;
+}
+
+.element-3 {
+  /* The transform-origin is 10% from the left and 45% from the top */
+  background-color: orange;
+  transform-origin: 10% 45%;
+}
+
+.element-4 {
+  /* The transform-origin is 90px from the left and 30px from the top */
+  background-color: blue;
+  transform-origin: 90px 30px;
+}
+.element-5 {
+  /* The transform-origin is 90px from the left and 30px from the top */
+  background-color: rgb(60, 255, 0);
+  transform-origin: 90px 30px -620;
+  backface-visibility: hidden;
+}
+
+@keyframes rotateinfinite {
+  30% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  80% {
+    transform: rotate(260deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleinfinite {
+  30% {
+    transform: rotate(90deg) translateX(50px);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  80% {
+    transform: rotate(260deg) translateX(-150px);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}

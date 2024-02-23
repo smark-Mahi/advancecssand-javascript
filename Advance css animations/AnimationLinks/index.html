@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <article class="content">
+        <p>
+            ... and here is some text. this text shows <a href="https://cssanimation.rocks" title="learn all about animating in the browser" class="anchor-tooltip">css animation</a>
+            can help us links be more fun and useful...
+        </p>
+    </article>
+    <article class="content">
+        <p class="button">Do the thing</p>
+    </article>
+    <div class="divv"></div>
+    <div class="gradient"></div>
+    <div class="gradient1"></div>
+    <div class="gradient2"></div>
+    <div class="radialgradient"></div>
+    <div class="radialgradient1"></div>
+   <p class="overflow-text">hello guys hggfkfkhjkooooooohk!</p>
+   <p class="overflow-text1">hello guys hggfkfkhj!</p>
+    <script>
+        var anchors = document.querySelectorAll('.anchor-tooltip');
+       anchors.forEach((anchor)=>{
+        var tooltipText=anchor.getAttribute('title'),tooltip=document.createElement('span')
+        tooltip.className='title-tooltip'
+        tooltip.innerHTML=tooltipText
+        anchor.appendChild(tooltip)
+       })
+        console.log(anchor,'an')
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+:root {
+  --bg_curved_color: #b8acda;
+  --bg_button_color: #2d9cdb;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1em;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+  .parent {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+
+    .curvedshape {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 40%;
+      background-color: var(--bg_curved_color);
+      /* top right bottom left */
+      border-radius: 0 0 50% 50%/0 0 100% 100%;
+      transform: scale(1.5);
+      z-index: -1;
+    }
+
+    .section {
+      background-color: transparent;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 500px;
+      height: 382px;
+
+      .clip {
+        background-image: url("../../images/image 1.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        color: white;
+        display: flex;
+        justify-content: center;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0% 85%);
+
+        p {
+          margin-top: 3em;
+          text-align: start;
+          padding: 0 1.5em;
+          font-size: 1.5em;
+        }
+      }
+
+      .clip2 {
+        height: 100%;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+
+        clip-path: polygon(68% 0, 100% 15%, 100% 100%, 0 100%, 0 0);
+        box-shadow: inset gray 0px 0px 2.5px 0.2px;
+        padding-inline: 2.5em;
+
+        h2 {
+          font-size: 16px;
+          place-self: start;
+          margin: 1.5em 0;
+        }
+
+        form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1em;
+
+          .emaill,
+          .passwordd {
+            width: 100%;
+          }
+
+          .input-control.error input {
+            border-color: #ff3860;
+          }
+
+          .input-control .error {
+            /* display: inline-block; */
+            color: #ff3860;
+            font-size: 9px;
+            height: 13px;
+          }
+
+          .dob-heading {
+            padding-bottom: 0.5em;
+          }
+          label {
+            font-size: 1em;
+            font-weight: bold;
+          }
+
+          input[type="submit"] {
+            width: 9.5em;
+            height: 25px;
+            background-color: var(--bg_button_color);
+            color: white;
+            border-radius: 2px;
+            border: none;
+            font-size: 12px;
+            cursor: pointer;
+          }
+
+          select {
+            height: 2em;
+            font-size: 12px;
+          }
+
+          input {
+            width: 100%;
+            height: 1.5em;
+            border: none;
+            border: solid 1px black;
+            border-radius: 2px;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::placeholder {
+              font-size: 0.8em;
+            }
+          }
+
+          .DOB {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5em;
+
+            div {
+              display: flex;
+              flex-direction: column;
+            }
+
+            label {
+              color: #666666;
+              font-size: 10px;
+            }
+
+            input {
+              width: 2.5em;
+            }
+          }
+          .type0fPerson > div {
+            display: flex;
+            gap: 2em;
+
+            label {
+              font-weight: 300;
+            }
+
+            div {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 1200px) {
+  body .parent .section {
+    width: 761px;
+    height: 582px;
+    .clip {
+      p {
+        margin-top: 5em;
+        text-align: start;
+        padding: 2em;
+      }
+    }
+    .clip2 {
+      h2 {
+        font-size: 30px;
+      }
+      form {
+        gap: 3em;
+
+        label {
+          font-size: 1.5em;
+        }
+
+        input[type="submit"] {
+          width: 14em;
+          height: 35px;
+          font-size: 14px;
+        }
+
+        .DOB {
+          input {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 600px) {
+  body .parent {
+    .curvedshape {
+      top: 100%;
+      height: 25%;
+      border-radius: 50% 50% 0 0 / 50% 50% 0 0;
+      transform: scale(1.8);
+      z-index: 1;
+    }
+    .section {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .clip {
+        width: auto;
+        height: 170px;
+        background-image: url("../../images/image 2.png");
+        clip-path: polygon(75% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+      }
+
+      .clip2 {
+        clip-path: polygon(75% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+
+        h2 {
+          font-size: 2em;
+          margin: 1em 0;
+        }
+
+        form {
+          input {
+            width: 100%;
+            height: 2em;
+          }
+          select {
+            height: 2.5em;
+          }
+
+          input[type="submit"] {
+            width: 12em;
+            height: 35px;
+            font-size: 14px;
+          }
+          .DOB {
+            input {
+              width: 90%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
